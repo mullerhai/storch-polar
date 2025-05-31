@@ -1,11 +1,11 @@
 package examples.java.expressions;
 
-import static org.polars.scala.polars.functions.*;
+import static torch.polars.functions.*;
 
 import examples.scala.utils.CommonUtils;
 import java.util.Collections;
 import java.util.Random;
-import org.polars.scala.polars.Polars;
+import torch.polars.Polars;
 import torch.polars.api.DataFrame;
 import torch.polars.api.LazyFrame;
 

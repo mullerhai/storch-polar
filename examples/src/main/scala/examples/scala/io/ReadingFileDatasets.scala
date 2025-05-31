@@ -1,9 +1,9 @@
 package examples.scala.io
 
-import torch.polars.api.{DataFrame, LazyFrame}
 import examples.scala.utils.CommonUtils
 import torch.polars.Polars
 import torch.polars.api.io.Scannable
+import torch.polars.api.{DataFrame, LazyFrame}
 
 /** Polars supports various input file formats like the following,
   *   - [[Scannable.csv CSV]] (delimited format like CSV, TSV,

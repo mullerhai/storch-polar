@@ -1,9 +1,11 @@
 package examples.scala.expressions
 
-import scala.util.Random
-
 import examples.scala.utils.CommonUtils
+
+import scala.util.Random
+//import torch.polars.utils.CommonUtils
 import torch.polars.Polars
+import torch.polars.functions.{asc, col, lit}
 
 object ApplyingSimpleExpressions {
   def main(args: Array[String]): Unit = {

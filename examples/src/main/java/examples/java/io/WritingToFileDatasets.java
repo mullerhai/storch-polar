@@ -1,7 +1,7 @@
 package examples.java.io;
 
 import examples.scala.utils.CommonUtils;
-import org.polars.scala.polars.Polars;
+import torch.polars.Polars;
 import torch.polars.api.DataFrame;
 import torch.polars.api.io.Writeable;
 

@@ -13,7 +13,7 @@ object ExtraCommands {
   lazy val cargoCheck =
     taskKey[Unit]("Checks the formatting of native module and its Cargo.toml.")
 
-  lazy val commandAliases: Seq[Setting[_]] = Seq(
+  lazy val commandAliases: Seq[Setting[?]] = Seq(
     addCommandAlias("cleanAll", ";cleanHeaders; clean; cleanFiles; reload"),
     addCommandAlias("genHeaders", ";cleanHeaders; javah"),
     addCommandAlias("fmtAll", ";scalafmtAll; scalafmtSbt; javafmtAll; cargoFmt; reload"),
@@ -23,7 +23,7 @@ object ExtraCommands {
     )
   ).flatten
 
-  lazy val commands: Seq[Setting[_]] = Seq(
+  lazy val commands: Seq[Setting[?]] = Seq(
     cleanHeaders := {
       import scala.reflect.io.Directory
 

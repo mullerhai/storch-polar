@@ -5,7 +5,7 @@ ThisBuild / publish / skip := true
 ThisBuild / publishArtifact := false
 // [error] No warnings can be incurred under -Werror (or -Xfatal-warnings)
 scalacOptions -= "-Xfatal-warnings"
-
+ThisBuild / scalacOptions -= "-Xfatal-warnings"
 /*
  ***********************
  * Core Module *
@@ -27,7 +27,7 @@ import scala.collection.Seq
 ////    csrCacheDirectory := file("D:\\coursier"),
 //  )
 
-ThisBuild / tlBaseVersion := "0.0" // your current series x.y
+ThisBuild / tlBaseVersion := "0.1.0" // your current series x.y
 //ThisBuild / CoursierCache := file("D:\\coursier")
 ThisBuild / organization := "io.github.mullerhai" //"dev.storch"
 ThisBuild / organizationName := "storch.dev"
@@ -71,9 +71,9 @@ ThisBuild / apiURL := Some(new URL("https://storch.dev/api/"))
 ThisBuild / tlSonatypeUseLegacyHost := false
 
 // publish website from this branch
-ThisBuild / tlSitePublishBranch := Some("main")
+//ThisBuild / tlSitePublishBranch := Some("main")
 ThisBuild / homepage := Some(new URL("https://storch.dev/api/"))
-ThisBuild / scmInfo := Some( ScmInfo( url( "https://github.com/BigDataZhangSir/scala-polars" ), "scm:git:https://github.com/BigDataZhangSir/scala-polars.git" ) )
+ThisBuild / scmInfo := Some( ScmInfo( url( "https://github.com/storch-polars" ), "scm:git:https://github.com/storch-polars.git" ) )
 // https://mvnrepository.com/artifact/org.projectlombok/lombok
 
 // https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-jsr310
@@ -96,7 +96,7 @@ lazy val core = project
 //    SiteScaladoc / siteSubdirName := "api/latest"
   )
   .settings(ProjectDependencies.dependencies)
-  .settings(GeneralSettings.commonSettings)
+//  .settings(GeneralSettings.commonSettings)
 //  .settings(PublishingSettings.settings)
   .settings(
     nativeRoot := baseDirectory.value.toPath.resolveSibling("native").toFile,
@@ -104,7 +104,7 @@ lazy val core = project
   )
   .settings(ExtraCommands.commands)
   .settings(ExtraCommands.commandAliases)
-//  .configureUnidoc("scala-polars API Reference")
+//  .configureUnidoc("storch-polars API Reference")
 
 /*
  ***********************
@@ -114,9 +114,9 @@ lazy val core = project
 
 lazy val examples = project
   .in(file("examples"))
-  .withId("scala-polars-examples")
-  .settings(name := "scala-polars-examples")
-  .settings(GeneralSettings.commonSettings)
+  .withId("storch-polars-examples")
+  .settings(name := "storch-polars-examples")
+//  .settings(GeneralSettings.commonSettings)
   .settings(
     Compile / packageBin / publishArtifact := false,
     Compile / packageDoc / publishArtifact := false,

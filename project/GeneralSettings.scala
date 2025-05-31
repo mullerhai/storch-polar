@@ -28,17 +28,17 @@ object GeneralSettings {
     scalaVersion := defaultScalaVersion,
     crossScalaVersions := supportedScalaVersions,
     scalacOptions ++= Seq(
-      "-encoding",
-      "utf8",
-      "-deprecation",
-      "-feature",
-      "-language:existentials",
-      "-language:implicitConversions",
-      "-language:reflectiveCalls",
-      "-language:higherKinds",
-      "-language:postfixOps",
-      "-unchecked",
-      "-Xfatal-warnings"
+//      "-encoding",
+//      "utf8",
+//      "-deprecation",
+//      "-feature",
+//      "-language:existentials",
+//      "-language:implicitConversions",
+//      "-language:reflectiveCalls",
+//      "-language:higherKinds",
+//      "-language:postfixOps",
+//      "-unchecked",
+//      "-Xfatal-warnings" //
     ),
 //    ++ (if (priorTo213(scalaVersion.value)) Seq("-target:jvm-1.8")
 //          else Seq("-release", "8")),
@@ -51,7 +51,7 @@ object GeneralSettings {
   )
 
   lazy val settings: Seq[Setting[_]] = Seq(
-    name := "scala-polars",
+    name := "storch-polars", //"scala-polars",
     nativeRoot := baseDirectory.value.toPath.resolveSibling("native").toFile
   )
 
