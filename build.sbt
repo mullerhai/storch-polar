@@ -1,22 +1,38 @@
-import DocSettings.*
-import Utils.{nativeRoot}
-
-ThisBuild / publish / skip := true
-ThisBuild / publishArtifact := false
-// [error] No warnings can be incurred under -Werror (or -Xfatal-warnings)
-scalacOptions -= "-Xfatal-warnings"
-ThisBuild / scalacOptions -= "-Xfatal-warnings"
-/*
- ***********************
- * Core Module *
- ***********************
- */
-
 import sbt.*
 import Keys.*
 import sbt.Def.settings
-
 import scala.collection.Seq
+import DocSettings.*
+import Utils.{nativeRoot}
+//ghpagesRepository := file("target/gh-pages")
+git.remoteRepo :=  "git@github.com:mullerhai/storch-polar.git" //git:https://github.com/mullerhai/storch-polar.git
+
+lazy val core = project
+  .in(file("core"))
+  .withId("storch-polars")
+  .settings(name := "storch-polar")
+  //  .enablePlugins(GhpagesPlugin, SiteScaladocPlugin)
+  .settings(
+    //    unidocSourceFilePatterns := Nil,
+    //    git.remoteRepo := "git@github.com:chitralverma/scala-polars.git",
+    //    SiteScaladoc / siteSubdirName := "api/latest"
+  )
+  .settings(ProjectDependencies.dependencies)
+  //  .settings(GeneralSettings.commonSettings)
+  //  .settings(PublishingSettings.settings)
+  .settings(
+    nativeRoot := baseDirectory.value.toPath.resolveSibling("native").toFile,
+    inConfig(Compile)(NativeBuildSettings.settings)
+  )
+  .settings(ExtraCommands.commands)
+  .settings(ExtraCommands.commandAliases)
+//  .enablePlugins(GhpagesPlugin)
+ThisBuild / publish / skip := true
+ThisBuild / publishArtifact := false
+// [error] No warnings can be incurred under -Werror (or -Xfatal-warnings)
+//scalacOptions -= "-Xfatal-warnings"
+//ThisBuild / scalacOptions -= "-Xfatal-warnings"
+
 
 //lazy val root = project
 //  .enablePlugins(NoPublishPlugin)
@@ -27,7 +43,7 @@ import scala.collection.Seq
 ////    csrCacheDirectory := file("D:\\coursier"),
 //  )
 
-ThisBuild / tlBaseVersion := "0.1.0" // your current series x.y
+//ThisBuild / tlBaseVersion := "0.1.0" // your current series x.y
 //ThisBuild / CoursierCache := file("D:\\coursier")
 ThisBuild / organization := "io.github.mullerhai" //"dev.storch"
 ThisBuild / organizationName := "storch.dev"
@@ -60,20 +76,13 @@ releaseProcess := Seq[ReleaseStep](
   commitNextVersion,
   pushChanges,
 )
-
-
-//ThisBuild / version := "0.1.0-SNAPSHOT"
-
-
 ThisBuild / tlSitePublishBranch := Some("main")
-
 ThisBuild / apiURL := Some(new URL("https://storch.dev/api/"))
 ThisBuild / tlSonatypeUseLegacyHost := false
 
 // publish website from this branch
-//ThisBuild / tlSitePublishBranch := Some("main")
 ThisBuild / homepage := Some(new URL("https://storch.dev/api/"))
-ThisBuild / scmInfo := Some( ScmInfo( url( "https://github.com/storch-polars" ), "scm:git:https://github.com/storch-polars.git" ) )
+ThisBuild / scmInfo := Some( ScmInfo( url( "https://github.com/mullerhai/storch-polar" ), "scm:git:https://github.com/mullerhai/storch-polar.git" ) )
 // https://mvnrepository.com/artifact/org.projectlombok/lombok
 
 // https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-jsr310
@@ -85,25 +94,25 @@ libraryDependencies += "com.fasterxml.jackson.core" % "jackson-databind" % "2.19
 // https://mvnrepository.com/artifact/org.typelevel/kind-projector
 //libraryDependencies += ("org.typelevel" %% "kind-projector" % "0.13.3") cross CrossVersion.for3Use2_13
 excludeDependencies +=  "org.typelevel" % "kind-projector"
-lazy val core = project
-  .in(file("core"))
-  .withId("storch-polars")
-  .settings(name := "storch-polars")
-//  .enablePlugins(GhpagesPlugin, SiteScaladocPlugin)
-  .settings(
-//    unidocSourceFilePatterns := Nil,
-//    git.remoteRepo := "git@github.com:chitralverma/scala-polars.git",
-//    SiteScaladoc / siteSubdirName := "api/latest"
-  )
-  .settings(ProjectDependencies.dependencies)
-//  .settings(GeneralSettings.commonSettings)
-//  .settings(PublishingSettings.settings)
-  .settings(
-    nativeRoot := baseDirectory.value.toPath.resolveSibling("native").toFile,
-    inConfig(Compile)(NativeBuildSettings.settings)
-  )
-  .settings(ExtraCommands.commands)
-  .settings(ExtraCommands.commandAliases)
+//lazy val core = project
+//  .in(file("core"))
+//  .withId("storch-polars")
+//  .settings(name := "storch-polars")
+////  .enablePlugins(GhpagesPlugin, SiteScaladocPlugin)
+//  .settings(
+////    unidocSourceFilePatterns := Nil,
+////    git.remoteRepo := "git@github.com:chitralverma/scala-polars.git",
+////    SiteScaladoc / siteSubdirName := "api/latest"
+//  )
+//  .settings(ProjectDependencies.dependencies)
+////  .settings(GeneralSettings.commonSettings)
+////  .settings(PublishingSettings.settings)
+//  .settings(
+//    nativeRoot := baseDirectory.value.toPath.resolveSibling("native").toFile,
+//    inConfig(Compile)(NativeBuildSettings.settings)
+//  )
+//  .settings(ExtraCommands.commands)
+//  .settings(ExtraCommands.commandAliases)
 //  .configureUnidoc("storch-polars API Reference")
 
 /*

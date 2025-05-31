@@ -1,6 +1,6 @@
 package examples.scala
 
-import torch.polars.api.Series
+import org.polars.scala.polars.api.Series
 
 object InstantiateSeries {
 

@@ -1,9 +1,9 @@
 package examples.scala.io
 
 import examples.scala.utils.CommonUtils
-import torch.polars.Polars
-import torch.polars.api.DataFrame
-import torch.polars.api.io.Writeable
+import org.polars.scala.polars.Polars
+import org.polars.scala.polars.api.DataFrame
+import org.polars.scala.polars.api.io.Writeable
 
 /** Polars supports various output file formats like the following,
   *   - [[Writeable.parquet Apache Parquet]]

@@ -1,9 +1,9 @@
 package examples.scala.io
 
-import torch.polars.api.{DataFrame, LazyFrame}
+import org.polars.scala.polars.api.{DataFrame, LazyFrame}
 
 import examples.scala.utils.CommonUtils
-import torch.polars.Polars
+import org.polars.scala.polars.Polars
 
 /** Polars provides 2 API for reading datasets lazily (`scan`) or eagerly (`read`).
   *

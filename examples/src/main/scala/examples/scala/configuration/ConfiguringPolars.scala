@@ -1,7 +1,6 @@
 package examples.scala.configuration
 
-import torch.polars.Polars
-
+import org.polars.scala.polars.Polars
 import java.io.File
 import java.nio.file.{Files, Path}
 

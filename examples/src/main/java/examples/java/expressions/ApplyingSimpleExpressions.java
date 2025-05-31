@@ -1,13 +1,13 @@
 package examples.java.expressions;
 
-import static torch.polars.functions.*;
+import static org.polars.scala.polars.functions.*;
 
 import examples.scala.utils.CommonUtils;
 import java.util.Collections;
 import java.util.Random;
-import torch.polars.Polars;
-import torch.polars.api.DataFrame;
-import torch.polars.api.LazyFrame;
+import org.polars.scala.polars.Polars;
+import org.polars.scala.polars.api.DataFrame;
+import org.polars.scala.polars.api.LazyFrame;
 
 public class ApplyingSimpleExpressions {
 

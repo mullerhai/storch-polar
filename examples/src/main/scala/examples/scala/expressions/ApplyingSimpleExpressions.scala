@@ -3,9 +3,8 @@ package examples.scala.expressions
 import examples.scala.utils.CommonUtils
 
 import scala.util.Random
-//import torch.polars.utils.CommonUtils
-import torch.polars.Polars
-import torch.polars.functions.{asc, col, lit}
+import org.polars.scala.polars.Polars
+import org.polars.scala.polars.functions.{asc, col, lit}
 
 object ApplyingSimpleExpressions {
   def main(args: Array[String]): Unit = {

@@ -1,10 +1,10 @@
 package examples.java.io;
 
 import examples.scala.utils.CommonUtils;
-import torch.polars.Polars;
-import torch.polars.api.DataFrame;
-import torch.polars.api.LazyFrame;
-import torch.polars.api.Row;
+import org.polars.scala.polars.Polars;
+import org.polars.scala.polars.api.DataFrame;
+import org.polars.scala.polars.api.LazyFrame;
+import org.polars.scala.polars.api.Row;
 import scala.collection.Iterator;
 
 /**
