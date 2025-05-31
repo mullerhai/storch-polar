@@ -14,7 +14,7 @@ addSbtPlugin("no.arktekk.sbt" % "aether-deploy" % "0.29.1")
 
 addSbtPlugin("com.github.sbt" % "sbt-dynver" % "5.1.0")
 
-addSbtPlugin("com.github.sbt" % "sbt-ghpages" % "0.8.0")
+//addSbtPlugin("com.github.sbt" % "sbt-ghpages" % "0.8.0")
 
 ////addSbtPlugin("com.github.sbt" % "sbt-unidoc" % "0.5.0")
 

@@ -2,18 +2,19 @@ package examples.java.io;
 
 import examples.scala.utils.CommonUtils;
 import org.polars.scala.polars.Polars;
-import org.polars.scala.polars.api.DataFrame;
-import org.polars.scala.polars.api.LazyFrame;
+import torch.polars.api.DataFrame;
+import torch.polars.api.LazyFrame;
+import torch.polars.api.io.Scannable;
 
 /**
  * Polars supports various input file formats like the following,
  *
  * <ul>
- *   <li>{@link org.polars.scala.polars.api.io.Scannable#csv CSV} (delimited format like CSV, TSV,
+ *   <li>{@link Scannable#csv CSV} (delimited format like CSV, TSV,
  *       etc.)
- *   <li>{@link org.polars.scala.polars.api.io.Scannable#parquet Apache Parquet}
- *   <li>{@link org.polars.scala.polars.api.io.Scannable#ipc Apache Arrow IPC}
- *   <li>{@link org.polars.scala.polars.api.io.Scannable#jsonLines New line delimited JSON}
+ *   <li>{@link Scannable#parquet Apache Parquet}
+ *   <li>{@link Scannable#ipc Apache Arrow IPC}
+ *   <li>{@link Scannable#jsonLines New line delimited JSON}
  * </ul>
  *
  * <p>All the above formats are compatible with the lazy or eager input API and users can supply 1

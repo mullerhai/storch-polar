@@ -1,16 +1,16 @@
 package examples.scala.io
 
-import org.polars.scala.polars.Polars
-import org.polars.scala.polars.api.{DataFrame, LazyFrame}
-
+import torch.polars.api.{DataFrame, LazyFrame}
 import examples.scala.utils.CommonUtils
+import torch.polars.Polars
+import torch.polars.api.io.Scannable
 
 /** Polars supports various input file formats like the following,
-  *   - [[org.polars.scala.polars.api.io.Scannable.csv CSV]] (delimited format like CSV, TSV,
+  *   - [[Scannable.csv CSV]] (delimited format like CSV, TSV,
   *     etc.)
-  *   - [[org.polars.scala.polars.api.io.Scannable.parquet Apache Parquet]]
-  *   - [[org.polars.scala.polars.api.io.Scannable.ipc Apache Arrow IPC]]
-  *   - [[org.polars.scala.polars.api.io.Scannable.jsonLines New line delimited JSON]]
+  *   - [[Scannable.parquet Apache Parquet]]
+  *   - [[Scannable.ipc Apache Arrow IPC]]
+  *   - [[Scannable.jsonLines New line delimited JSON]]
   *
   * All the above formats are compatible with the lazy or eager input API and users can supply 1
   * or more file paths which will be read in parallel to return a [[LazyFrame]] or a

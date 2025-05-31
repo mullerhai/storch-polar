@@ -1,8 +1,8 @@
 package examples.java;
 
 import java.util.Arrays;
-import org.polars.scala.polars.api.DataFrame;
-import org.polars.scala.polars.api.Series;
+import torch.polars.api.DataFrame;
+import torch.polars.api.Series;
 
 public class InstantiateDataFrame {
 

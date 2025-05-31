@@ -6,7 +6,7 @@ import Versions.*
 
 object ProjectDependencies {
 
-  lazy val dependencies: Seq[Setting[_]] = Seq(
+  lazy val dependencies: Seq[Setting[?]] = Seq(
     libraryDependencies ++= {
       Seq(
 //        "org.scala-lang.modules" %% "scala-collection-compat" % scalaCollectionCompat,

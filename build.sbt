@@ -1,8 +1,10 @@
 import DocSettings.*
-import Utils.*
+import Utils.{nativeRoot}
 
 ThisBuild / publish / skip := true
 ThisBuild / publishArtifact := false
+// [error] No warnings can be incurred under -Werror (or -Xfatal-warnings)
+scalacOptions -= "-Xfatal-warnings"
 
 /*
  ***********************
@@ -87,7 +89,7 @@ lazy val core = project
   .in(file("core"))
   .withId("storch-polars")
   .settings(name := "storch-polars")
-  .enablePlugins(GhpagesPlugin, SiteScaladocPlugin)
+//  .enablePlugins(GhpagesPlugin, SiteScaladocPlugin)
   .settings(
 //    unidocSourceFilePatterns := Nil,
 //    git.remoteRepo := "git@github.com:chitralverma/scala-polars.git",

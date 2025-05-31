@@ -2,7 +2,7 @@ package examples.java;
 
 import java.util.Arrays;
 import java.util.Collections;
-import org.polars.scala.polars.api.Series;
+import torch.polars.api.Series;
 
 public class InstantiateSeries {
   public static void main(String[] args) {

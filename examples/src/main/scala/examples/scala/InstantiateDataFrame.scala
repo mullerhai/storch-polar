@@ -1,6 +1,6 @@
 package examples.scala
 
-import org.polars.scala.polars.api.{DataFrame, Series}
+import torch.polars.api.{DataFrame, Series}
 
 object InstantiateDataFrame {
 
